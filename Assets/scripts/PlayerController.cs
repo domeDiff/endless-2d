@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private float runSpeed = 5f;
     [SerializeField] private float jumpForce = 10f;
 
     private Rigidbody2D rb;
@@ -12,7 +13,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    void Update()
+    private void Update()
     {
         if(Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
         {
@@ -20,6 +21,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        rb.linearVelocity = new Vector2(runSpeed, rb.linearVelocity.y);
+    }
     private void Jump()
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
