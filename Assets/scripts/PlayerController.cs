@@ -44,14 +44,22 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        if (groundCheck == null)
-            return;
+    //private void OnDrawGizmosSelected()
+    //{
+    //    if (groundCheck == null)
+    //        return;
 
-        Gizmos.DrawWireSphere(
-            groundCheck.position,
-            groundCheckRadius
-        );
+    //    Gizmos.DrawWireSphere(
+    //        groundCheck.position,
+    //        groundCheckRadius
+    //    );
+    //}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("PLAYER HIT AN OBSTACLE!");
+        }
     }
 }
