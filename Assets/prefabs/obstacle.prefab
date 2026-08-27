@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1821396196326852372}
   - component: {fileID: 52590391155805906}
   - component: {fileID: 3578616138690026156}
+  - component: {fileID: -8585688541889049034}
   m_Layer: 7
   m_Name: obstacle
   m_TagString: Obstacle
@@ -138,3 +139,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-8585688541889049034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564541446187412918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b5f342e5f617e49ae6214480d170c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+  moveSpeed: 5

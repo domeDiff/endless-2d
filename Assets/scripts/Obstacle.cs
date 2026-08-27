@@ -1,5 +1,38 @@
+using System;
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour
-{ 
+{
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float destroyDistance = 15f;
+
+    private Transform player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
+    private void Update()
+    {
+
+        if (GameManager.Instance.isGameOver)
+            return;
+
+
+        transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+
+        if (transform.position.x < player.position.x - destroyDistance)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameManager.Instance.GameOver();
+        }
+    }
 }
