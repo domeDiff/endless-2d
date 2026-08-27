@@ -2,18 +2,27 @@ using UnityEngine;
 
 public class scoreManager : MonoBehaviour
 {
-    private float score;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static scoreManager Instance;
+
+    public int score { get; private set; }
+
+    [SerializeField] private float pointPerSec = 10f;
+
+    private float scoreTimer;
+    private void Awake()
     {
-        
+        Instance = this;
+        score = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        score += Time.deltaTime;
-        Debug.Log("Score: " + Mathf.FloorToInt(score));
+        if (GameManager.Instance.isGameOver)
+            return;
 
+        scoreTimer += pointPerSec * Time.deltaTime;
+
+        score = Mathf.FloorToInt(scoreTimer);
     }
+
 }
