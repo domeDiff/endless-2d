@@ -198,6 +198,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GroundTile
   Player: {fileID: 1111903330}
   groundWidth: 20
+--- !u!1 &509341331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 509341333}
+  - component: {fileID: 509341332}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &509341332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509341331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5270b07359ca9ef4a88283ea1909a0bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+--- !u!4 &509341333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509341331}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.00813, y: 0.61452, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &752289310
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,8 +643,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSpawner
   obstaclePrefab: {fileID: 7564541446187412918, guid: cbffb7d38b19ae44f8b228e11aba1d75, type: 3}
-  minSpawnTime: 1.5
-  maxSpawnTime: 3
+  startMinSpawnTime: 2
+  startMaxSpawnTime: 3.5
+  difficultyIncreaseRate: 0.02
+  maxDifficulty: 1
 --- !u!1 &1508071348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3524365867062047207, guid: dc8c621b24f5dcd41baafdcdd8b2a841, type: 3}
@@ -780,3 +826,4 @@ SceneRoots:
   - {fileID: 356536712}
   - {fileID: 1111903330}
   - {fileID: 808032508}
+  - {fileID: 509341333}

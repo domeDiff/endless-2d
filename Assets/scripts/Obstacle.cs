@@ -15,11 +15,24 @@ public class Obstacle : MonoBehaviour
 
     private void Update()
     {
+
+        if (GameManager.Instance.isGameOver)
+            return;
+
+
         transform.position += Vector3.left * moveSpeed * Time.deltaTime;
 
         if (transform.position.x < player.position.x - destroyDistance)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameManager.Instance.GameOver();
         }
     }
 }
