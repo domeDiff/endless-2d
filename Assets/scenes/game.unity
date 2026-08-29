@@ -292,8 +292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f434bd0996e4a246bc10223c7995125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundMover
-  moveSpeed: 5
-  groundWidth: 20
 --- !u!1 &399438601
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,6 +519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5270b07359ca9ef4a88283ea1909a0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  worldSpeed: 5
 --- !u!4 &509341333
 Transform:
   m_ObjectHideFlags: 0
@@ -1243,8 +1242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f434bd0996e4a246bc10223c7995125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundMover
-  moveSpeed: 5
-  groundWidth: 20
 --- !u!1 &1524262031
 GameObject:
   m_ObjectHideFlags: 0

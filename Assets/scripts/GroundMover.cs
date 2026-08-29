@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class GroundMover : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
-
     void Update()
     {
         if (GameManager.Instance.isGameOver)
@@ -15,7 +13,7 @@ public class GroundMover : MonoBehaviour
 
     private void MoveGround()
     {
-        transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+        transform.Translate(Vector3.left * GameManager.Instance.WorldSpeed * Time.deltaTime);
     }
 
 }

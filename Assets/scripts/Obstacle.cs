@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float destroyDistance = 15f;
 
     private Transform player;
@@ -20,7 +19,7 @@ public class Obstacle : MonoBehaviour
             return;
 
 
-        transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+        transform.position += Vector3.left * GameManager.Instance.WorldSpeed * Time.deltaTime;
 
         if (transform.position.x < player.position.x - destroyDistance)
         {
