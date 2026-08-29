@@ -257,6 +257,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3524365867062047207, guid: dc8c621b24f5dcd41baafdcdd8b2a841, type: 3}
       insertIndex: -1
       addedObject: {fileID: 356536714}
+    - targetCorrespondingSourceObject: {fileID: 3524365867062047207, guid: dc8c621b24f5dcd41baafdcdd8b2a841, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 356536718}
   m_SourcePrefab: {fileID: 100100000, guid: dc8c621b24f5dcd41baafdcdd8b2a841, type: 3}
 --- !u!1 &356536713 stripped
 GameObject:
@@ -276,6 +279,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundTile
   Player: {fileID: 1111903330}
+  groundWidth: 20
+--- !u!114 &356536718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356536713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f434bd0996e4a246bc10223c7995125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GroundMover
+  moveSpeed: 5
   groundWidth: 20
 --- !u!1 &399438601
 GameObject:
@@ -601,7 +618,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 621032294}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399438606}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &621032294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,7 +890,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076343890}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2586e460d3d88d4f8df55a9e4748893, type: 3}
   m_Name: 
@@ -990,8 +1019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17d47d8b0b2b2cf4e80621fa603a046b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  runSpeed: 5
-  jumpForce: 10
+  jumpForce: 12
   groundCheck: {fileID: 752289311}
   groundCheckRadius: 0.3
   groundLayer:
@@ -1183,6 +1211,7 @@ MonoBehaviour:
   startMaxSpawnTime: 3.5
   difficultyIncreaseRate: 0.02
   maxDifficulty: 1
+  groundY: -2
 --- !u!1 &1508071348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3524365867062047207, guid: dc8c621b24f5dcd41baafdcdd8b2a841, type: 3}
@@ -1201,6 +1230,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundTile
   Player: {fileID: 1111903330}
+  groundWidth: 20
+--- !u!114 &1508071353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508071348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f434bd0996e4a246bc10223c7995125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GroundMover
+  moveSpeed: 5
   groundWidth: 20
 --- !u!1 &1524262031
 GameObject:
@@ -1763,6 +1806,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3524365867062047207, guid: dc8c621b24f5dcd41baafdcdd8b2a841, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1508071352}
+    - targetCorrespondingSourceObject: {fileID: 3524365867062047207, guid: dc8c621b24f5dcd41baafdcdd8b2a841, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1508071353}
   m_SourcePrefab: {fileID: 100100000, guid: dc8c621b24f5dcd41baafdcdd8b2a841, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
