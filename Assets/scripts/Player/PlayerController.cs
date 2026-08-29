@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private LayerMask groundLayer;
 
+ private Animator animator;
     private float fixedX;
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         fixedX = transform.position.x;
+        animator = GetComponent<Animator>();
+        
     }
     private void Update()
     {
@@ -47,6 +50,7 @@ public class PlayerController : MonoBehaviour
     private void CheckGround()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        animator.SetBool("isJumping", !isGrounded);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
