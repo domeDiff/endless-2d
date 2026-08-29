@@ -2,12 +2,7 @@ using UnityEngine;
 
 public class ParallaxLayer : MonoBehaviour
 {
-    [SerializeField] private float parallaxSpeed = 0.5f; // Adjust this value to control the parallax effect
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float parallaxMultiplier = 0.2f;
 
     // Update is called once per frame
     void Update()
@@ -15,6 +10,10 @@ public class ParallaxLayer : MonoBehaviour
         if(GameManager.Instance.isGameOver)
             return;
 
-        transform.position += Vector3.left * parallaxSpeed * Time.deltaTime;
+        float worldSpeed = GameManager.Instance.WorldSpeed;
+
+        float moveSpeed = worldSpeed * parallaxMultiplier;
+
+        transform.position += Vector3.left * moveSpeed * Time.deltaTime;
     }
 }
