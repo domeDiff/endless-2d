@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -11,7 +12,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float maxWorldSpeed = 10f;
     [SerializeField] private float speedIncreaseRate = 0.1f;
 
+    //[SerializeField] private float difficulty = 1f;
+
     public float WorldSpeed => worldSpeed;
+
 
     private void Awake()
     {

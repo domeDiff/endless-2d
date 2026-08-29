@@ -6,9 +6,11 @@ public class ObstacleSpawner : MonoBehaviour
 
     [SerializeField] private GameObject obstaclePrefab;
 
-    [Header("Spawn Timing")]
-    [SerializeField] private float startMinSpawnTime = 2f;
-    [SerializeField] private float startMaxSpawnTime = 3.5f;
+    [Header("Obstacle Spacing")]
+    [SerializeField] private float minObstacleDistance = 12f;
+    [SerializeField] private float maxObstacleDistance = 20f;
+    [SerializeField] private float recTime = 1f;
+
 
     [Header("Difficulty")]
     [SerializeField] private float difficultyIncreaseRate = 0.01f;
@@ -52,9 +54,15 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void SetNextSpawnTime()
     {
-        float minSpawnTime = Mathf.Lerp(startMinSpawnTime, 1f, difficulty);
-        float maxSpawnTime = Mathf.Lerp(startMaxSpawnTime, 2f, difficulty);
-        nextSpawnTime = Random.Range(minSpawnTime, maxSpawnTime);
+        float minDistance = Mathf.Lerp(maxObstacleDistance, minObstacleDistance, difficulty);
+
+        float distance = Random.Range(minDistance, maxObstacleDistance);
+
+        float worldSpeed = GameManager.Instance.WorldSpeed;
+
+        float distanceTime = distance / worldSpeed;
+
+        nextSpawnTime = Mathf.Max(distanceTime, recTime);
     }
 
     private void IncreaseDifficulty()

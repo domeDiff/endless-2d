@@ -11,7 +11,7 @@ public class GroundTile : MonoBehaviour
             return;
 
 
-        if (transform.position.x +  groundWidth / 2f < Player.position.x)
+        if (transform.position.x +  groundWidth / 1.3f < Player.position.x)
         {
             transform.position += Vector3.right * (groundWidth * 2f);
         }
