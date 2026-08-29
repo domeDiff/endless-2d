@@ -14,6 +14,8 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] private float difficultyIncreaseRate = 0.01f;
     [SerializeField] private float maxDifficulty = 1f;
 
+    [SerializeField] private float groundY = 0f;
+
 
     private float spawnTimer;
     private float nextSpawnTime;
@@ -43,7 +45,9 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void SpawnObstacle()
     {
-        Instantiate(obstaclePrefab,transform.position, Quaternion.identity);
+        Vector3 spawnPosition = new Vector3(transform.position.x, groundY, transform.position.z);
+
+        Instantiate(obstaclePrefab,spawnPosition, Quaternion.identity);
     }
 
     private void SetNextSpawnTime()

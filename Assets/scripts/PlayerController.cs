@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float runSpeed = 5f;
     [SerializeField] private float jumpForce = 10f;
 
     [SerializeField] private Transform groundCheck;
@@ -11,12 +10,14 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private LayerMask groundLayer;
 
+    private float fixedX;
     private Rigidbody2D rb;
     private bool isGrounded;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        fixedX = transform.position.x;
     }
     private void Update()
     {
@@ -29,11 +30,13 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+
+        transform.position = new Vector3(fixedX, transform.position.y, transform.position.z);
     }
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(runSpeed, rb.linearVelocity.y);
+        rb.position = new Vector2(fixedX, rb.position.y);
     }
     private void Jump()
     {
@@ -45,17 +48,6 @@ public class PlayerController : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
-
-    //private void OnDrawGizmosSelected()
-    //{
-    //    if (groundCheck == null)
-    //        return;
-
-    //    Gizmos.DrawWireSphere(
-    //        groundCheck.position,
-    //        groundCheckRadius
-    //    );
-    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
