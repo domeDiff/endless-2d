@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         fixedX = transform.position.x;
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         
     }
     private void Update()
