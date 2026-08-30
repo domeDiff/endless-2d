@@ -13,7 +13,13 @@ public class PlayerController : MonoBehaviour
  private Animator animator;
     private float fixedX;
     private Rigidbody2D rb;
+
+    private bool isDead;
     private bool isGrounded;
+    private bool wasGrounded;
+    public bool IsGrounded => isGrounded;
+    public bool JustLanded => isGrounded && !wasGrounded;
+
 
     private void Awake()
     {
@@ -49,7 +55,10 @@ public class PlayerController : MonoBehaviour
 
     private void CheckGround()
     {
+        wasGrounded = isGrounded;
+
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
         animator.SetBool("isJumping", !isGrounded);
     }
 
@@ -57,7 +66,10 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
+            isDead = true;
             Debug.Log("PLAYER HIT AN OBSTACLE!");
         }
+
+        animator.SetBool("isDead", isDead);
     }
 }

@@ -1872,6 +1872,7 @@ GameObject:
   - component: {fileID: 465673991}
   - component: {fileID: 465673992}
   - component: {fileID: 465673993}
+  - component: {fileID: 465673994}
   m_Layer: 0
   m_Name: visual
   m_TagString: Untagged
@@ -1975,6 +1976,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &465673994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465673990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725ab2f61d77d384980fe07c8cb2f442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerVisual
+  jumpScaleY: 1.1
+  jumpScaleX: 0.95
+  landScaleY: 0.8
+  landScaleX: 1.2
+  scaleSpeed: 10
 --- !u!1 &509341331
 GameObject:
   m_ObjectHideFlags: 0
