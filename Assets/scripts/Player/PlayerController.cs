@@ -10,14 +10,25 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private LayerMask groundLayer;
 
+ private Animator animator;
     private float fixedX;
     private Rigidbody2D rb;
+
+    private bool isDead;
     private bool isGrounded;
+    private bool wasGrounded;
+    private bool justLanded;
+    private bool hasIniGrounded;
+    public bool IsGrounded => isGrounded;
+    public bool JustLanded => justLanded;
+
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         fixedX = transform.position.x;
+        animator = GetComponentInChildren<Animator>();
+        
     }
     private void Update()
     {
@@ -41,19 +52,58 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        isGrounded = false;
     }
 
     private void CheckGround()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        wasGrounded = isGrounded;
+
+        bool currentGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
+        if (!hasIniGrounded)
+        {
+            isGrounded = currentGrounded;
+            wasGrounded = currentGrounded;
+            justLanded = false;
+            hasIniGrounded = true;
+
+            animator.SetBool("isJumping", !isGrounded);
+            return;
+
+        }
+        else
+        {
+            wasGrounded = isGrounded;
+            isGrounded = currentGrounded;
+
+            justLanded = isGrounded && !wasGrounded;
+
+            animator.SetBool("isJumping", !isGrounded);
+
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
+            isDead = true;
             Debug.Log("PLAYER HIT AN OBSTACLE!");
         }
+
+        animator.SetBool("isDead", isDead);
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (groundCheck == null)
+            return;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(
+            groundCheck.position,
+            groundCheckRadius
+        );
+    }
+
 }
