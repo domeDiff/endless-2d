@@ -17,8 +17,10 @@ public class PlayerController : MonoBehaviour
     private bool isDead;
     private bool isGrounded;
     private bool wasGrounded;
+    private bool justLanded;
+    private bool hasIniGrounded;
     public bool IsGrounded => isGrounded;
-    public bool JustLanded => isGrounded && !wasGrounded;
+    public bool JustLanded => justLanded;
 
 
     private void Awake()
@@ -50,16 +52,35 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        isGrounded = false;
     }
 
     private void CheckGround()
     {
         wasGrounded = isGrounded;
 
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        bool currentGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        animator.SetBool("isJumping", !isGrounded);
+        if (!hasIniGrounded)
+        {
+            isGrounded = currentGrounded;
+            wasGrounded = currentGrounded;
+            justLanded = false;
+            hasIniGrounded = true;
+
+            animator.SetBool("isJumping", !isGrounded);
+            return;
+
+        }
+        else
+        {
+            wasGrounded = isGrounded;
+            isGrounded = currentGrounded;
+
+            justLanded = isGrounded && !wasGrounded;
+
+            animator.SetBool("isJumping", !isGrounded);
+
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -72,4 +93,17 @@ public class PlayerController : MonoBehaviour
 
         animator.SetBool("isDead", isDead);
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (groundCheck == null)
+            return;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(
+            groundCheck.position,
+            groundCheckRadius
+        );
+    }
+
 }

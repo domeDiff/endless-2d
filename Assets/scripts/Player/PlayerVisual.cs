@@ -12,8 +12,12 @@ public class PlayerVisual : MonoBehaviour
     [SerializeField] private float landScaleX = 1.1f;
 
     [SerializeField] private float scaleSpeed = 10f;
+
+    [SerializeField] private ParticleSystem runDust;
+    [SerializeField] private ParticleSystem landDust;
     private Vector3 normalScale;
     private PlayerController playerController;
+
 
     private void Awake()
     {
@@ -41,5 +45,21 @@ public class PlayerVisual : MonoBehaviour
         }
 
         transform.localScale = Vector3.Lerp(transform.localScale, targetScale, scaleSpeed * Time.deltaTime);
+
+        if (playerController.IsGrounded)
+        {
+            if (!runDust.isPlaying)
+                runDust.Play();
+        }
+        else
+        {
+            if (runDust.isPlaying)
+                runDust.Stop();
+        }
+
+        if (playerController.JustLanded)
+        {
+            landDust.Play();
+        }
     }
 }
