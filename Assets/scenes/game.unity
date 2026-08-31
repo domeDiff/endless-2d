@@ -15788,7 +15788,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bab3d51d9254d4fa1c9f8bbc1e223d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSpawner
-  obstaclePrefab: {fileID: 7564541446187412918, guid: cbffb7d38b19ae44f8b228e11aba1d75, type: 3}
+  obstaclePrefab:
+  - {fileID: 7564541446187412918, guid: cbffb7d38b19ae44f8b228e11aba1d75, type: 3}
+  - {fileID: 7564541446187412918, guid: d1d0f412185935f4591d4b5991e6a0dd, type: 3}
+  - {fileID: 7564541446187412918, guid: dcda8332c7f575f45998b4e0b89b17b3, type: 3}
+  - {fileID: 7564541446187412918, guid: a7c76123ca4adf04c86417dca8d0b351, type: 3}
   minObstacleDistance: 12
   maxObstacleDistance: 20
   recTime: 1
