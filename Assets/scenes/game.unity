@@ -6726,8 +6726,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.2, y: 1.2, z: 0.6}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 292377266}
   - {fileID: 759358429}
@@ -8397,7 +8397,7 @@ Transform:
   m_GameObject: {fileID: 759358428}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.39, y: -0.22, z: 0}
+  m_LocalPosition: {x: 0.49, y: -0.23, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9201,7 +9201,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.4
+      value: 0.7
       mode: 0
       spread: 0
       speed:
@@ -9430,7 +9430,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 6
+        scalar: 10
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -15760,7 +15760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1403408675
 Transform:
   m_ObjectHideFlags: 0
@@ -15788,7 +15788,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bab3d51d9254d4fa1c9f8bbc1e223d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSpawner
-  obstaclePrefab: {fileID: 7564541446187412918, guid: cbffb7d38b19ae44f8b228e11aba1d75, type: 3}
+  obstaclePrefab:
+  - {fileID: 7564541446187412918, guid: cbffb7d38b19ae44f8b228e11aba1d75, type: 3}
+  - {fileID: 7564541446187412918, guid: d1d0f412185935f4591d4b5991e6a0dd, type: 3}
+  - {fileID: 7564541446187412918, guid: dcda8332c7f575f45998b4e0b89b17b3, type: 3}
+  - {fileID: 7564541446187412918, guid: a7c76123ca4adf04c86417dca8d0b351, type: 3}
   minObstacleDistance: 12
   maxObstacleDistance: 20
   recTime: 1

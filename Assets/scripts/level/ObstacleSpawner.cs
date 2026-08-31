@@ -4,7 +4,7 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
 
-    [SerializeField] private GameObject obstaclePrefab;
+    [SerializeField] private GameObject[] obstaclePrefab;
 
     [Header("Obstacle Spacing")]
     [SerializeField] private float minObstacleDistance = 12f;
@@ -49,7 +49,9 @@ public class ObstacleSpawner : MonoBehaviour
     {
         Vector3 spawnPosition = new Vector3(transform.position.x, groundY, transform.position.z);
 
-        Instantiate(obstaclePrefab,spawnPosition, Quaternion.identity);
+        int randomIndex = Random.Range(0, obstaclePrefab.Length);
+
+        Instantiate(obstaclePrefab[randomIndex],spawnPosition, Quaternion.identity);
     }
 
     private void SetNextSpawnTime()
