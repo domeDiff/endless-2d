@@ -5,7 +5,7 @@ public class scoreManager : MonoBehaviour
     public static scoreManager Instance;
 
     public int score { get; private set; }
-
+    public int highScore { get; private set; }
     [SerializeField] private float pointPerSec = 10f;
 
     private float scoreTimer;
@@ -13,6 +13,9 @@ public class scoreManager : MonoBehaviour
     {
         Instance = this;
         score = 0;
+
+        highScore = PlayerPrefs.GetInt("highScore", 0);
+
     }
 
     private void Update()
@@ -23,6 +26,13 @@ public class scoreManager : MonoBehaviour
         scoreTimer += pointPerSec * Time.deltaTime;
 
         score = Mathf.FloorToInt(scoreTimer);
+
+        if (score > highScore)
+        {
+            highScore = score;
+            PlayerPrefs.SetInt("highScore", highScore);
+            PlayerPrefs.Save();
+        }
     }
 
 }

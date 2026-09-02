@@ -17700,7 +17700,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661507162}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -19672,7 +19672,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 50, y: -40}
-  m_SizeDelta: {x: 400, y: 80}
+  m_SizeDelta: {x: 530, y: 80}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2128009008
 MonoBehaviour:
@@ -19696,8 +19696,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score: 0000'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bc6713219db516d4d9c7c0d1777a9ef7, type: 2}
-  m_sharedMaterial: {fileID: 3752760111115494107, guid: bc6713219db516d4d9c7c0d1777a9ef7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ad0181e69907aaf449a98bf48ce6c73c, type: 2}
+  m_sharedMaterial: {fileID: -1547446656285900993, guid: ad0181e69907aaf449a98bf48ce6c73c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
