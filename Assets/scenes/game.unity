@@ -6364,7 +6364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &407766644
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15436,6 +15436,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!4 &1287738277 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7042059700222893711, guid: d9099d94aecb81046b7d20bdf12f229c, type: 3}
+  m_PrefabInstance: {fileID: 8580283720105323937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1301902482
 GameObject:
   m_ObjectHideFlags: 0
@@ -17103,6 +17108,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f434bd0996e4a246bc10223c7995125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundMover
+--- !u!4 &1508071356 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1862515354658940886, guid: dc8c621b24f5dcd41baafdcdd8b2a841, type: 3}
+  m_PrefabInstance: {fileID: 8698052698373636564}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1513282739
 GameObject:
   m_ObjectHideFlags: 0
@@ -20002,6 +20012,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144338590}
   m_CullTransparentMesh: 1
+--- !u!1001 &8580283720105323937
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1508071356}
+    m_Modifications:
+    - target: {fileID: 6845962269110624009, guid: d9099d94aecb81046b7d20bdf12f229c, type: 3}
+      propertyPath: m_Name
+      value: coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042059700222893711, guid: d9099d94aecb81046b7d20bdf12f229c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.301
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042059700222893711, guid: d9099d94aecb81046b7d20bdf12f229c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042059700222893711, guid: d9099d94aecb81046b7d20bdf12f229c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042059700222893711, guid: d9099d94aecb81046b7d20bdf12f229c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042059700222893711, guid: d9099d94aecb81046b7d20bdf12f229c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042059700222893711, guid: d9099d94aecb81046b7d20bdf12f229c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042059700222893711, guid: d9099d94aecb81046b7d20bdf12f229c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042059700222893711, guid: d9099d94aecb81046b7d20bdf12f229c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042059700222893711, guid: d9099d94aecb81046b7d20bdf12f229c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042059700222893711, guid: d9099d94aecb81046b7d20bdf12f229c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d9099d94aecb81046b7d20bdf12f229c, type: 3}
 --- !u!1001 &8698052698373636564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20060,7 +20127,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1862515354658940886, guid: dc8c621b24f5dcd41baafdcdd8b2a841, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1287738277}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3524365867062047207, guid: dc8c621b24f5dcd41baafdcdd8b2a841, type: 3}
       insertIndex: -1
