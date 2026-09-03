@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CatData
   m_EditorClassIdentifier: Assembly-CSharp::charData
   charName: cat_1
-  charPrefab: {fileID: 0}
+  charPrefab: {fileID: 5661776401753031969, guid: 86e6572e3b77f1c408cf258c2a3e7986, type: 3}
   unlockCost: 0
