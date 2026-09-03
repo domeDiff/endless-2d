@@ -6,7 +6,8 @@ public class coinSpawner : MonoBehaviour
     [SerializeField] private GameObject coinPrefab;
     [SerializeField] private float minSpawnTime = 1.5f;
     [SerializeField] private float maxSpawnTime = 3f;
-    [SerializeField] private float spawnY = 2f;
+    [SerializeField] private float minSpawnY = 0.5f;
+    [SerializeField] private float maxSpawnY = 1.5f;
 
     private float spawnTimer;
     private float nextSpawnTime;
@@ -33,8 +34,9 @@ public class coinSpawner : MonoBehaviour
 
     private void SpawnCoin()
     {
-  
-        Vector3 spawnPosition = new Vector3(transform.position.x, spawnY, transform.position.z);
+        float randomY = Random.Range(minSpawnY, maxSpawnY);
+
+        Vector3 spawnPosition = new Vector3(transform.position.x, randomY, transform.position.z);
         Instantiate(coinPrefab, spawnPosition, Quaternion.identity);
     }
 
