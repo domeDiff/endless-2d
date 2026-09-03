@@ -5,6 +5,8 @@ public class Obstacle : MonoBehaviour
 {
     [SerializeField] private float destroyDistance = 15f;
 
+    [SerializeField] private GameObject runEffect;
+
     private Transform player;
 
     private void Start()
