@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private CanvasGroup fadePanel;
     [SerializeField] private float fadeDuration = 0.5f;
     [SerializeField] private TMP_Text bestScoreText;
+
+    [SerializeField] private GameObject characterSelectPanel;
 
     private void Start()
     {
@@ -38,5 +41,15 @@ public class MainMenuManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void OpenChar()
+    {
+        characterSelectPanel.SetActive(true);
+    }
+
+    public void CloseChar()
+    {
+        characterSelectPanel.SetActive(false);
     }
 }
