@@ -1,4 +1,6 @@
 using System.Globalization;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class charManager : MonoBehaviour
@@ -6,6 +8,7 @@ public class charManager : MonoBehaviour
     public static charManager instance;
 
     private const string SelectedCharKey = "SelectedChar";
+    [SerializeField] TMP_Text coinText;
 
     private void Awake()
     {
@@ -16,6 +19,8 @@ public class charManager : MonoBehaviour
         }
 
         instance = this;
+
+        coinText.text = "coins: " + PlayerPrefs.GetInt("coins", 0).ToString("D4");
     }
 
     public bool isUnlocked(charData character)
@@ -53,6 +58,6 @@ public class charManager : MonoBehaviour
 
     public string GetSelectedCharacter()
     {
-        return PlayerPrefs.GetString(SelectedCharKey, "clem");
+        return PlayerPrefs.GetString(SelectedCharKey, "snowy");
     }
 }

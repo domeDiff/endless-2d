@@ -1,7 +1,7 @@
 using TMPro;
-using TMPro.EditorUtilities;
-using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CoinManager : MonoBehaviour
 {
@@ -24,6 +24,19 @@ public class CoinManager : MonoBehaviour
         coins = PlayerPrefs.GetInt("coins", 0);
     }
 
+    private void Update()
+    {
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            ResetCoins();
+        }
+
+        if(Keyboard.current.gKey.wasPressedThisFrame)
+        {
+            GetCoins();
+        }
+    }
+
     private void Start()
     {
         UpdateUI();
@@ -43,5 +56,34 @@ public class CoinManager : MonoBehaviour
         {
             coinText.text = "coins: " + coins;
         }
+    }
+
+    public void ResetCoins()
+    {
+        PlayerPrefs.SetInt("coins", 0);
+        PlayerPrefs.Save();
+
+        coins = 0;
+        UpdateUI();
+    }
+
+    public void GetCoins()
+    {
+        coins = 2000;
+        PlayerPrefs.SetInt("coins", coins);
+        PlayerPrefs.Save();
+
+        UpdateUI();
+    }
+
+    //fox dislock
+
+    [MenuItem("Game/Reset_Clem")]
+    public static void ResetClem()
+    {
+       PlayerPrefs.DeleteKey("clem");
+        PlayerPrefs.Save();
+
+        Debug.Log("Clem character unlocked status reset.");
     }
 }
