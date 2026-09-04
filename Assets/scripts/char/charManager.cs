@@ -6,4 +6,53 @@ public class charManager : MonoBehaviour
     public static charManager instance;
 
     private const string SelectedCharKey = "SelectedChar";
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+    }
+
+    public bool isUnlocked(charData character)
+    {
+        if (character.unlockCost == 0)
+            return true;
+
+        return PlayerPrefs.GetInt(character.charName, 0) == 1;
+    }
+
+    public bool PurchaseCharacter(charData character)
+    {
+        if (isUnlocked(character))
+            return true;
+
+        if (CoinManager.Instance.coins < character.unlockCost)
+            return false;
+
+        CoinManager.Instance.AddCoins(-character.unlockCost);
+
+        PlayerPrefs.SetInt(character.charName, 1);
+
+        PlayerPrefs.Save();
+        return true;
+    }
+    
+    public void SelectCharacter(charData character)
+    {
+        if (!isUnlocked(character))
+            return;
+
+        PlayerPrefs.SetString(SelectedCharKey, character.charName);
+        PlayerPrefs.Save();
+    }
+
+    public string GetSelectedCharacter()
+    {
+        return PlayerPrefs.GetString(SelectedCharKey, "clem");
+    }
 }
