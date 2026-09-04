@@ -1,9 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float jumpForce = 10f;
+    [SerializeField] Transform visual;
+    [SerializeField] GameObject snowyVisual;
+    [SerializeField] GameObject clemVisual;
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.15f;
@@ -27,8 +31,9 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         fixedX = transform.position.x;
-        animator = GetComponentInChildren<Animator>();
         
+        LoadSelectedChar();
+
     }
     private void Update()
     {
@@ -94,16 +99,26 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isDead", isDead);
     }
 
-    private void OnDrawGizmosSelected()
+    private void LoadSelectedChar()
     {
-        if (groundCheck == null)
-            return;
+        string selectedChar = PlayerPrefs.GetString("SelectedChar", "snowy");
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(
-            groundCheck.position,
-            groundCheckRadius
-        );
+        snowyVisual.SetActive(selectedChar == "snowy");
+        clemVisual.SetActive(selectedChar == "clem");
+
+        animator = GetComponentInChildren<Animator>();
     }
+
+    //private void OnDrawGizmosSelected()
+    //{
+    //    if (groundCheck == null)
+    //        return;
+
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawWireSphere(
+    //        groundCheck.position,
+    //        groundCheckRadius
+    //    );
+    //}
 
 }

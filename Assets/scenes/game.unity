@@ -4229,6 +4229,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!4 &841784364 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4027523939455425874, guid: 435f4b044189fa144bb5f47e96375dad, type: 3}
+  m_PrefabInstance: {fileID: 9012406748591974177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &893986699
 GameObject:
   m_ObjectHideFlags: 0
@@ -5122,6 +5127,7 @@ Transform:
   m_Children:
   - {fileID: 752289311}
   - {fileID: 465673991}
+  - {fileID: 841784364}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1111903331
@@ -5210,6 +5216,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   jumpForce: 12
+  visual: {fileID: 0}
+  snowyVisual: {fileID: 9066159337980568606}
+  clemVisual: {fileID: 9012406748591974178}
   groundCheck: {fileID: 752289311}
   groundCheckRadius: 0.3
   groundLayer:
@@ -11354,6 +11363,68 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1508071353}
   m_SourcePrefab: {fileID: 100100000, guid: dc8c621b24f5dcd41baafdcdd8b2a841, type: 3}
+--- !u!1001 &9012406748591974177
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1111903330}
+    m_Modifications:
+    - target: {fileID: 4027523939455425874, guid: 435f4b044189fa144bb5f47e96375dad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027523939455425874, guid: 435f4b044189fa144bb5f47e96375dad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027523939455425874, guid: 435f4b044189fa144bb5f47e96375dad, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027523939455425874, guid: 435f4b044189fa144bb5f47e96375dad, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027523939455425874, guid: 435f4b044189fa144bb5f47e96375dad, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027523939455425874, guid: 435f4b044189fa144bb5f47e96375dad, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027523939455425874, guid: 435f4b044189fa144bb5f47e96375dad, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027523939455425874, guid: 435f4b044189fa144bb5f47e96375dad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027523939455425874, guid: 435f4b044189fa144bb5f47e96375dad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027523939455425874, guid: 435f4b044189fa144bb5f47e96375dad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288115439156058821, guid: 435f4b044189fa144bb5f47e96375dad, type: 3}
+      propertyPath: m_Name
+      value: clem_visual
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 435f4b044189fa144bb5f47e96375dad, type: 3}
+--- !u!1 &9012406748591974178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6288115439156058821, guid: 435f4b044189fa144bb5f47e96375dad, type: 3}
+  m_PrefabInstance: {fileID: 9012406748591974177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9066159337980568605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11404,13 +11475,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5661776401753031969, guid: 86e6572e3b77f1c408cf258c2a3e7986, type: 3}
       propertyPath: m_Name
-      value: visual
+      value: cat_visual
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86e6572e3b77f1c408cf258c2a3e7986, type: 3}
+--- !u!1 &9066159337980568606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5661776401753031969, guid: 86e6572e3b77f1c408cf258c2a3e7986, type: 3}
+  m_PrefabInstance: {fileID: 9066159337980568605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

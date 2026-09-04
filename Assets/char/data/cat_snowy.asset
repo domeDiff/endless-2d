@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5755f5bcc2294c34fb5c583ac5e4cd12, type: 3}
-  m_Name: CatData
+  m_Name: cat_snowy
   m_EditorClassIdentifier: Assembly-CSharp::charData
-  charName: cat_1
+  charName: snowy
   charPrefab: {fileID: 5661776401753031969, guid: 86e6572e3b77f1c408cf258c2a3e7986, type: 3}
   unlockCost: 0
