@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: cat_clem
   m_EditorClassIdentifier: Assembly-CSharp::charData
   charName: clem
-  charPrefab: {fileID: 5661776401753031969, guid: 86e6572e3b77f1c408cf258c2a3e7986, type: 3}
+  charPrefab: {fileID: 6288115439156058821, guid: 435f4b044189fa144bb5f47e96375dad, type: 3}
   unlockCost: 1000

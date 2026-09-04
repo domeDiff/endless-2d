@@ -60,4 +60,14 @@ public class charManager : MonoBehaviour
     {
         return PlayerPrefs.GetString(SelectedCharKey, "snowy");
     }
+
+    public void RefreshButtons()
+    {
+        charButton[] buttons = FindObjectsByType<charButton>();
+
+        foreach (charButton button in buttons)
+        {
+            button.UpdateStatus();
+        }
+    }
 }
