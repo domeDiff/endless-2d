@@ -1,29 +1,39 @@
+using TMPro;
 using UnityEngine;
 
 public class music_sel : MonoBehaviour
 {
-    [SerializeField] private GameObject[] songs;
+    [SerializeField] private TMP_Dropdown dropdown;
+    [SerializeField] private AudioSource AudioSource;
+    [SerializeField] private AudioClip song1;
+    [SerializeField] private AudioClip song2;
+    [SerializeField] private AudioClip song3;
 
-
-    public void song1()
+    private void Start()
     {
-        songs[0].SetActive(true);
-        songs[1].SetActive(false);
-        songs[2].SetActive(false);
+        dropdown.onValueChanged.AddListener(ChangeSong);
+        ChangeSong(0);
     }
 
-    public void song2()
+    private void ChangeSong(int index)
     {
-        songs[0].SetActive(false);
-        songs[1].SetActive(true);
-        songs[2].SetActive(false);
+        switch(index) {
+            case 0:
+                PlaySong(song1);
+                break;
+            case 1:
+                PlaySong(song2);
+                break;
+            case 2:
+                PlaySong(song3);
+                break;
+        }
     }
 
-    public void song3()
+    private void PlaySong(AudioClip song)
     {
-        songs[0].SetActive(false);
-        songs[1].SetActive(false);
-        songs[2].SetActive(true);
+        AudioSource.clip = song;
+        AudioSource.Play();
+        PlayerPrefs.Save();
     }
-
 }
