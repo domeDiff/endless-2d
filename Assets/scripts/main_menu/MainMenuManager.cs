@@ -10,6 +10,13 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private float fadeDuration = 0.5f;
     [SerializeField] private TMP_Text bestScoreText;
 
+    [SerializeField] private GameObject settingsPanel;
+    [SerializeField] private GameObject bestScoreGameObject;
+
+    [SerializeField] private GameObject Title;
+
+    [SerializeField] private GameObject buttonParent;
+
     [SerializeField] private GameObject characterSelectPanel;
 
     private void Start()
@@ -52,4 +59,23 @@ public class MainMenuManager : MonoBehaviour
     {
         characterSelectPanel.SetActive(false);
     }
+
+    public void SettingsButtonOpen()
+    {
+        buttonParent.SetActive(false);
+        bestScoreGameObject.SetActive(false);
+        Title.SetActive(false);
+
+        settingsPanel.SetActive(true);
+    }
+
+    public void SettingsButtonClose()
+    {
+        buttonParent.SetActive(true);
+        bestScoreGameObject.SetActive(true);
+        Title.SetActive(true);
+
+        settingsPanel.SetActive(false);
+    }
 }
+

@@ -82,7 +82,7 @@ public class CoinManager : MonoBehaviour
     public static void ResetClem()
     {
        PlayerPrefs.DeleteKey("clem");
-        PlayerPrefs.Save();
+       PlayerPrefs.Save();
 
         Debug.Log("Clem character unlocked status reset.");
     }
