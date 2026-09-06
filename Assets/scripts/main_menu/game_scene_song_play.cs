@@ -9,9 +9,13 @@ public class GameMusic : MonoBehaviour
 
     private const string MusicKey = "SelectedSong";
 
+    private const string VolumeKey = "MusicVolume";
+
     private void Start()
     {
         int selectedSong = PlayerPrefs.GetInt(MusicKey, 0);
+        float savedVolume = PlayerPrefs.GetFloat(VolumeKey, 1f);
+        audioSource.volume = savedVolume;
 
         switch (selectedSong)
         {

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,6 +19,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject buttonParent;
 
     [SerializeField] private GameObject characterSelectPanel;
+    [SerializeField] private GameObject menuCatAnim;
 
     private void Start()
     {
@@ -53,11 +55,13 @@ public class MainMenuManager : MonoBehaviour
     public void OpenChar()
     {
         characterSelectPanel.SetActive(true);
+        menuCatAnim.SetActive(false);
     }
 
     public void CloseChar()
     {
         characterSelectPanel.SetActive(false);
+        menuCatAnim.SetActive(true);
     }
 
     public void SettingsButtonOpen()
@@ -65,6 +69,7 @@ public class MainMenuManager : MonoBehaviour
         buttonParent.SetActive(false);
         bestScoreGameObject.SetActive(false);
         Title.SetActive(false);
+        menuCatAnim.SetActive(false);
 
         settingsPanel.SetActive(true);
     }
@@ -74,6 +79,7 @@ public class MainMenuManager : MonoBehaviour
         buttonParent.SetActive(true);
         bestScoreGameObject.SetActive(true);
         Title.SetActive(true);
+        menuCatAnim.SetActive(true);
 
         settingsPanel.SetActive(false);
     }
