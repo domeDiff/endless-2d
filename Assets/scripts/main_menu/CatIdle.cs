@@ -1,23 +1,41 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CatIdle : MonoBehaviour
 {
-    [SerializeField] private float floatHeight = 0.15f;
-    [SerializeField] private float floatSpeed = 2f;
+    [SerializeField] private GameObject snowy;
+    [SerializeField] private GameObject goob;
 
-    private Vector3 startPos;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private Animator animator;
+    private void Awake()
     {
-            startPos = transform.position;
+        animator = GetComponent<Animator>(); 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-            float y = Mathf.Sin(Time.time * floatSpeed) * floatHeight;
-            transform.position = startPos + Vector3.up * y;
+        MenuAnim();
+
+    }
+    public void MenuAnim()
+    {
+        string selectedChar = PlayerPrefs.GetString(charManager.SelectedCharKey,"snowy"
+        );
+
+        Debug.Log("Selected character: " + selectedChar);
+
+        if (selectedChar == "snowy")
+        {
+            animator.SetBool("isSnowy", true);
+        }
+        else if (selectedChar == "clem")
+        {
+            animator.SetBool("isSnowy", false);
+           //snowy.SetActive(false);
+           // goob.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("Unknown character: " + selectedChar);
+        }
     }
 }

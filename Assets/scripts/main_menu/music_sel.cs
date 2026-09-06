@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class music_sel : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class music_sel : MonoBehaviour
 
     [Header("Dropdown")]
     [SerializeField] private TMP_Dropdown dropdown;
+    [SerializeField] private Slider volumeSlider;
 
     [Header("Music")]
     [SerializeField] private AudioSource audioSource;
@@ -15,6 +17,7 @@ public class music_sel : MonoBehaviour
     [SerializeField] private AudioClip song3;
 
     private const string MusicKey = "SelectedSong";
+    public const string VolumeKey = "MusicVolume";
 
     private void Awake()
     {
@@ -36,6 +39,18 @@ public class music_sel : MonoBehaviour
         // Get saved song
         int savedSong = PlayerPrefs.GetInt(MusicKey, 0);
 
+        float savedVolume = PlayerPrefs.GetFloat(VolumeKey, 1f);
+
+        audioSource.volume = savedVolume;
+
+        //slider
+
+        if(volumeSlider != null)
+        {
+            volumeSlider.SetValueWithoutNotify(savedVolume);
+            volumeSlider.onValueChanged.AddListener(ChangeVolume);
+        }
+
         // Set dropdown to saved song
         dropdown.SetValueWithoutNotify(savedSong);
 
@@ -56,6 +71,13 @@ public class music_sel : MonoBehaviour
         PlaySong(index);
     }
 
+    public void ChangeVolume(float volume)
+    {
+        audioSource.volume = volume;
+
+        PlayerPrefs.SetFloat(VolumeKey, volume);
+        PlayerPrefs.Save();
+    }
     private void PlaySong(int index)
     {
         AudioClip selectedSong = null;

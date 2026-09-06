@@ -77,6 +77,8 @@ using UnityEngine;
 
 public class charButton : MonoBehaviour
 {
+    [SerializeField] GameObject snowy;
+    [SerializeField] GameObject goob;
     [SerializeField] private charData CharData;
     [SerializeField] private TMP_Text statusText;
 
