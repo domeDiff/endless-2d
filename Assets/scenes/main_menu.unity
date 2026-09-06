@@ -2516,7 +2516,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5102,7 +5102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::music_sel
   dropdown: {fileID: 107149924}
-  AudioSource: {fileID: 811859508}
+  audioSource: {fileID: 811859508}
   song1: {fileID: 8300000, guid: 044710b340a051a48abe456212e8fd79, type: 3}
   song2: {fileID: 8300000, guid: c090aae1c44f93146a807034e0cf6732, type: 3}
   song3: {fileID: 8300000, guid: ec14dd59f4767e241bef8245f378e688, type: 3}
