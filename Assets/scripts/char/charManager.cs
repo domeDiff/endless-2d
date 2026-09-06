@@ -70,4 +70,9 @@ public class charManager : MonoBehaviour
             button.UpdateStatus();
         }
     }
+
+    public void OpenCharacterMenu()
+    {
+        RefreshButtons();
+    }
 }
