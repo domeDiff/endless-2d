@@ -369,7 +369,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 40
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -444,7 +444,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mon1_sprite_addon_2012_12_14_0
+      name: uodif
       rect:
         serializedVersion: 2
         x: 19
@@ -466,7 +466,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mon1_sprite_addon_2012_12_14_1
+      name: 525
       rect:
         serializedVersion: 2
         x: 83
@@ -664,7 +664,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mon1_sprite_addon_2012_12_14_10
+      name: 1
       rect:
         serializedVersion: 2
         x: 19
@@ -686,7 +686,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mon1_sprite_addon_2012_12_14_11
+      name: 2
       rect:
         serializedVersion: 2
         x: 85
@@ -708,7 +708,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mon1_sprite_addon_2012_12_14_12
+      name: 3
       rect:
         serializedVersion: 2
         x: 148
@@ -730,7 +730,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mon1_sprite_addon_2012_12_14_13
+      name: 4
       rect:
         serializedVersion: 2
         x: 212
@@ -752,7 +752,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mon1_sprite_addon_2012_12_14_14
+      name: 5
       rect:
         serializedVersion: 2
         x: 276
@@ -2813,9 +2813,12 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      mon1_sprite_addon_2012_12_14_0: -1266055460750163063
-      mon1_sprite_addon_2012_12_14_1: 1999779489361178438
-      mon1_sprite_addon_2012_12_14_10: 6081644748365158183
+      1: 6081644748365158183
+      2: -5129101743719149495
+      3: 7753363963529279963
+      4: 5246254858356113122
+      5: 4260451495458643948
+      525: 1999779489361178438
       mon1_sprite_addon_2012_12_14_100: -3378648199126512709
       mon1_sprite_addon_2012_12_14_101: -3628112039554674443
       mon1_sprite_addon_2012_12_14_102: 5680460440974298288
@@ -2823,10 +2826,6 @@ TextureImporter:
       mon1_sprite_addon_2012_12_14_104: 4204234611275920341
       mon1_sprite_addon_2012_12_14_105: -7095174620614498500
       mon1_sprite_addon_2012_12_14_106: 6975222525281092596
-      mon1_sprite_addon_2012_12_14_11: -5129101743719149495
-      mon1_sprite_addon_2012_12_14_12: 7753363963529279963
-      mon1_sprite_addon_2012_12_14_13: 5246254858356113122
-      mon1_sprite_addon_2012_12_14_14: 4260451495458643948
       mon1_sprite_addon_2012_12_14_15: 7054441585288595629
       mon1_sprite_addon_2012_12_14_16: 7577558164117523207
       mon1_sprite_addon_2012_12_14_17: 7434196454575733728
@@ -2920,6 +2919,7 @@ TextureImporter:
       mon1_sprite_addon_2012_12_14_97: -2849210671378866456
       mon1_sprite_addon_2012_12_14_98: 2528036799815063577
       mon1_sprite_addon_2012_12_14_99: -3657224193016255091
+      uodif: -1266055460750163063
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
