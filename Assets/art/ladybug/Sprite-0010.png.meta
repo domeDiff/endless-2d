@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6e118116e9fd08c4eb6a2d63423ebb1f
+guid: c500f326dc5ee6d4e8a3237a1a1fab51
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2166462395316544013
-    second: palm-tree_0
+      213: -1274250411473194610
+    second: Sprite-0010_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 60
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: palm-tree_0
+      name: Sprite-0010_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
-        width: 129
-        height: 208
+        x: 8
+        y: 10
+        width: 51
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d02a514f112d01e10800000000000000
-      internalID: 2166462395316544013
+      spriteID: e81be358004f05ee0800000000000000
+      internalID: -1274250411473194610
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      palm-tree_0: 2166462395316544013
+      Sprite-0010_0: -1274250411473194610
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
