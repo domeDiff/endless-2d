@@ -107,6 +107,7 @@ public class PlayerController : MonoBehaviour
         clemVisual.SetActive(selectedChar == "clem");
 
         animator = GetComponentInChildren<Animator>();
+
     }
 
     //private void OnDrawGizmosSelected()

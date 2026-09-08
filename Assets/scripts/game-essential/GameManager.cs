@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
 public class GameManager : MonoBehaviour
@@ -29,6 +30,12 @@ public class GameManager : MonoBehaviour
             return;
 
         IncreaseWorldSpeed();
+
+        if(Keyboard.current.spaceKey.isPressed)
+        {
+            Debug.Log("Space key is being held down.");
+            worldSpeed *= 2f;
+        }
     }
 
     private void IncreaseWorldSpeed()
