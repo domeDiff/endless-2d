@@ -9,6 +9,8 @@ public class coinSpawner : MonoBehaviour
     [SerializeField] private float minSpawnY = 0.5f;
     [SerializeField] private float maxSpawnY = 1.5f;
 
+
+
     private float spawnTimer;
     private float nextSpawnTime;
 

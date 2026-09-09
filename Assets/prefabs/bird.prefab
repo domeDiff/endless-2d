@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1649363591160026585}
   - component: {fileID: 2375338816421713958}
   - component: {fileID: 995356763665369933}
+  - component: {fileID: 4113401623210470894}
   m_Layer: 0
   m_Name: bird
   m_TagString: Untagged
@@ -128,3 +129,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxLayer
   parallaxMultiplier: 0.5
+--- !u!114 &4113401623210470894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7878571353690343408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2dc2d38f5ac9b4891f6c66119955ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::bird
+  destroyDistance: 15

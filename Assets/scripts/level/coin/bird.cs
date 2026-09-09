@@ -1,10 +1,8 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class coin : MonoBehaviour
+public class bird : MonoBehaviour
 {
-    [SerializeField] private int coinValue = 1;
-
     [SerializeField] private float destroyDistance = 15f;
 
     private Transform player;
@@ -16,20 +14,9 @@ public class coin : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Vector3.left * GameManager.Instance.WorldSpeed * Time.deltaTime);
-
         if (transform.position.x < player.position.x - destroyDistance)
         {
             Destroy(gameObject);
         }
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (!other.CompareTag("Player"))
-            return;
-
-        CoinManager.Instance.AddCoins(coinValue);
-
-        Destroy(gameObject);
     }
 }
