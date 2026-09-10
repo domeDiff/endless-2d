@@ -78,12 +78,12 @@ public class CoinManager : MonoBehaviour
 
     //fox dislock
 
-    [MenuItem("Game/Reset_Clem")]
-    public static void ResetClem()
-    {
-       PlayerPrefs.DeleteKey("clem");
-       PlayerPrefs.Save();
+    //[MenuItem("Game/Reset_Clem")]
+    //public static void ResetClem()
+    //{
+    //   PlayerPrefs.DeleteKey("clem");
+    //   PlayerPrefs.Save();
 
-        Debug.Log("Clem character unlocked status reset.");
-    }
+    //    Debug.Log("Clem character unlocked status reset.");
+    //}
 }
