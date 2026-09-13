@@ -29,9 +29,6 @@ public class music_sel : MonoBehaviour
         }
 
         instance = this;
-
-        // Keep this object and music when changing scenes
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
