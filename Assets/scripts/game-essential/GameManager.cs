@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
         IncreaseWorldSpeed();
 
-        if(Keyboard.current.spaceKey.isPressed)
+        if (Keyboard.current.oKey.isPressed)
         {
             Debug.Log("Space key is being held down.");
             worldSpeed *= 2f;

@@ -131,7 +131,10 @@ MonoBehaviour:
     - line: '|     y: 0'
     - line: '|     width: 1'
     - line: '|     height: 1'
-    - line: '|   m_SplashScreenLogos: []'
+    - line: '|   m_SplashScreenLogos:'
+    - line: '|   - logo: {fileID: -274993997574478944, guid: cac41857a09c7dc4d9fc96eeee94bf2c,
+        type: 3}'
+    - line: '|     duration: 2'
     - line: '|   m_VirtualRealitySplashScreen: {fileID: 2800000, guid: cac41857a09c7dc4d9fc96eeee94bf2c,
         type: 3}'
     - line: '|   defaultScreenWidth: 1920'

@@ -26,15 +26,15 @@ public class CoinManager : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current.rKey.wasPressedThisFrame)
-        {
-            ResetCoins();
-        }
+        //if (Keyboard.current.rKey.wasPressedThisFrame)
+        //{
+        //    ResetCoins();
+        //}
 
-        if(Keyboard.current.gKey.wasPressedThisFrame)
-        {
-            GetCoins();
-        }
+        //if(Keyboard.current.gKey.wasPressedThisFrame)
+        //{
+        //    GetCoins();
+        //}
     }
 
     private void Start()
