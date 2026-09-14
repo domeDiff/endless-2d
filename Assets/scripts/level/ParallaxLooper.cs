@@ -1,11 +1,10 @@
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class ParallaxLooper : MonoBehaviour
 {
     [SerializeField] private Transform[] backgrounds;
     [SerializeField] private float backgroundWidth = 20f;
-
-    private Animator animator;
 
     void Update()
     {
@@ -17,13 +16,6 @@ public class ParallaxLooper : MonoBehaviour
             {
                 back.position += Vector3.right * backgroundWidth *2f;
             }
-
-            float time = Time.deltaTime;
-
-            if (time >= 3)
-                animator.SetBool("isNight", true);
-            else if (Time.deltaTime >= 8)
-                animator.SetBool("isNight", false);
         }
     }
 }
