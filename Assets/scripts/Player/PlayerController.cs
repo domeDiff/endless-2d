@@ -42,7 +42,14 @@ public class PlayerController : MonoBehaviour
 
         CheckGround();
 
-        if(Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
+        bool jumpPress = Keyboard.current.spaceKey.wasPressedThisFrame;
+
+        if(Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
+        {
+            jumpPress = true;
+        }
+
+        if (jumpPress && isGrounded) 
         {
             Jump();
         }
