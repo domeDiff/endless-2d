@@ -143,6 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::coin
   coinValue: 1
+  destroyDistance: 15
+  collectSfx: {fileID: 8300000, guid: a29cc6434f92f964c9934a541d6e1220, type: 3}
 --- !u!95 &1681828482325276520
 Animator:
   serializedVersion: 7
