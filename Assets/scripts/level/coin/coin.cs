@@ -4,8 +4,8 @@ using UnityEngine;
 public class coin : MonoBehaviour
 {
     [SerializeField] private int coinValue = 1;
-
     [SerializeField] private float destroyDistance = 15f;
+    [SerializeField] private AudioClip collectSfx; // assign in Inspector
 
     private Transform player;
 
@@ -29,6 +29,10 @@ public class coin : MonoBehaviour
             return;
 
         CoinManager.Instance.AddCoins(coinValue);
+
+        if (collectSfx != null)
+            AudioSource.PlayClipAtPoint(collectSfx, transform.position);
+            
 
         Destroy(gameObject);
     }
